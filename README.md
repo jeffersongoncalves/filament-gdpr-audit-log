@@ -22,7 +22,7 @@ Browse the audit trail of [laravel-gdpr-audit-log](https://github.com/jeffersong
 - Who opens the list or an entry, and who verifies the chain, is logged too.
 - **Verify chain:** checks the hash chain and tells you which entry was altered, removed or inserted.
 - Read-only, like the log itself.
-- English (more languages coming). Custom actions you record are shown as they are.
+- 19 languages. Custom actions you record are shown as they are.
 
 ## Compatibility
 
