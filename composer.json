@@ -2,52 +2,59 @@
     "name": "jeffersongoncalves/filament-gdpr-audit-log",
     "description": "Filament plugin for laravel-gdpr-audit-log: the GDPR accountability log in your panel, read-only, with who viewed, changed, exported or erased personal data and a one-click hash chain check.",
     "keywords": [
+        "jeffersongoncalves",
         "laravel",
         "filament",
         "filament-plugin",
-        "filament-gdpr-audit-log"
+        "gdpr",
+        "audit-log",
+        "accountability",
+        "privacy"
     ],
     "homepage": "https://github.com/jeffersongoncalves/filament-gdpr-audit-log",
     "license": "MIT",
-    "type": "library",
     "authors": [
         {
-            "name": "Jefferson Simão Gonçalves",
+            "name": "Jefferson Gonçalves",
             "email": "gerson.simao.92@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.2",
-        "filament/filament": "^5.0",
+        "filament/filament": "^5.3",
+        "jeffersongoncalves/filament-plugin-core": "^3.0",
+        "jeffersongoncalves/laravel-gdpr-audit-log": "^1.0",
         "spatie/laravel-package-tools": "^1.16"
     },
     "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.0",
         "orchestra/testbench": "^10.0|^11.0",
         "pestphp/pest": "^3.0|^4.0",
-        "larastan/larastan": "^2.0|^3.0",
-        "laravel/pint": "^1.0"
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0"
     },
     "autoload": {
         "psr-4": {
-            "JeffersonGoncalves\\Filament\\GdprAuditLog\\": "src/"
+            "JeffersonGoncalves\\Filament\\GdprAuditLog\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JeffersonGoncalves\\Filament\\GdprAuditLog\\Tests\\": "tests/"
+            "JeffersonGoncalves\\Filament\\GdprAuditLog\\Tests\\": "tests"
         }
     },
     "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint",
-        "analyse": "vendor/bin/phpstan analyse"
+        "format": "vendor/bin/pint"
     },
     "config": {
         "sort-packages": true,
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
         }
     },
     "extra": {
