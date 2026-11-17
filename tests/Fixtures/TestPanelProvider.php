@@ -4,6 +4,7 @@ namespace JeffersonGoncalves\Filament\GdprAuditLog\Tests\Fixtures;
 
 use Filament\Panel;
 use Filament\PanelProvider;
+use JeffersonGoncalves\Filament\GdprAuditLog\GdprAuditLogPlugin;
 
 class TestPanelProvider extends PanelProvider
 {
@@ -13,6 +14,9 @@ class TestPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login();
+            ->login()
+            ->plugins([
+                GdprAuditLogPlugin::make(),
+            ]);
     }
 }
