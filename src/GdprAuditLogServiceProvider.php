@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\GdprAuditLog;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class GdprAuditLogServiceProvider extends PackageServiceProvider
+class GdprAuditLogServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-gdpr-audit-log';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-gdpr-audit-log')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
